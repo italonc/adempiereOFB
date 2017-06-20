@@ -53,7 +53,7 @@ import java.util.List;
  */
 public class GenerateMovement extends SvrProcess {
 
-    protected List<MPPOrder> records = new ArrayList<>();
+    protected List<MPPOrder> records = new ArrayList<MPPOrder>();
     private Timestamp movementDate = null;
     private MLocator locator = null;
     private String result = null;

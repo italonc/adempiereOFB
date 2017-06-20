@@ -35,6 +35,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import java.lang.IllegalStateException;
 
 public class MMigration extends X_AD_Migration {
 
@@ -291,7 +292,8 @@ public class MMigration extends X_AD_Migration {
 		try {
 			DB.commit(false, get_TrxName());
 			from.deleteEx(false, get_TrxName());
-		} catch (IllegalStateException | SQLException e) {
+		//} catch (IllegalStateException | SQLException e) {
+		} catch (SQLException e) {
 			log.log(Level.SEVERE, "[" + get_TrxName() + "]", e);
 		}
 		
